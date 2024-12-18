@@ -47,6 +47,14 @@ public class SnakeAndLadder {
             }
 
             System.out.println("Player " + (currentPlayer + 1) + "'s position: " + playerPositions[currentPlayer]);
+            // Check for winner
+            if (playerPositions[currentPlayer] == WINNING_POSITION) {
+                // UC 6: Report the number of dice rolls and positions after every roll
+                System.out.println("Player " + (currentPlayer + 1) + " wins the game!");
+                System.out.println("Player 1 dice rolls: " + diceRollCounts[0]);
+                System.out.println("Player 2 dice rolls: " + diceRollCounts[1]);
+                gameOver = true;
+            }
         }
     }
 }
