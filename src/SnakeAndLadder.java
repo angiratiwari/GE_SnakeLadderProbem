@@ -21,6 +21,22 @@ public class SnakeAndLadder {
             int diceRoll = random.nextInt(6) + 1; // Roll dice (1-6)
             diceRollCounts[currentPlayer]++;
             System.out.println("Dice rolled: " + diceRoll);
+
+            // UC 3: Check for options - No Play, Ladder, Snake
+            int option = random.nextInt(3); // 0: No Play, 1: Ladder, 2: Snake
+            switch (option) {
+                case 0: // No Play
+                    System.out.println("No Play: Player stays at position " + playerPositions[currentPlayer]);
+                    break;
+                case 1: // Ladder
+                    System.out.println("Ladder! Moving ahead by " + diceRoll + " steps.");
+                    playerPositions[currentPlayer] += diceRoll;
+                    break;
+                case 2: // Snake
+                    System.out.println("Snake! Moving back by " + diceRoll + " steps.");
+                    playerPositions[currentPlayer] -= diceRoll;
+                    break;
+            }
         }
     }
 }
