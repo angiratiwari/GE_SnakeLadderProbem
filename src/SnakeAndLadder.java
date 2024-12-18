@@ -54,6 +54,11 @@ public class SnakeAndLadder {
                 System.out.println("Player 1 dice rolls: " + diceRollCounts[0]);
                 System.out.println("Player 2 dice rolls: " + diceRollCounts[1]);
                 gameOver = true;
+            } else {
+                // UC 7: If a player gets a Ladder, they play again; otherwise, switch to the next player
+                if (option != 1) {
+                    currentPlayer = (currentPlayer + 1) % 2;
+                }
             }
         }
     }
