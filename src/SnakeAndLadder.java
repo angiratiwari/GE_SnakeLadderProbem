@@ -37,6 +37,10 @@ public class SnakeAndLadder {
                     playerPositions[currentPlayer] -= diceRoll;
                     break;
             }
+            // UC 4: Ensure player position doesn't go below 0
+            if (playerPositions[currentPlayer] < 0) {
+                playerPositions[currentPlayer] = 0;
+            }
         }
     }
 }
