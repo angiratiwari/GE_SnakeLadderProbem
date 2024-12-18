@@ -41,6 +41,12 @@ public class SnakeAndLadder {
             if (playerPositions[currentPlayer] < 0) {
                 playerPositions[currentPlayer] = 0;
             }
+            // UC 5: Ensure exact winning position 100
+            if (playerPositions[currentPlayer] > WINNING_POSITION) {
+                playerPositions[currentPlayer] -= diceRoll;
+            }
+
+            System.out.println("Player " + (currentPlayer + 1) + "'s position: " + playerPositions[currentPlayer]);
         }
     }
 }
